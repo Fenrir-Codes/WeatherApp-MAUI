@@ -86,17 +86,17 @@
            <Image Grid.Row="0" Grid.Column="2"  
                   HorizontalOptions="Center"  
                   HeightRequest="25"  
-                  Source="wind.png"/>  
+                  Source="wind.png"/>
 
-           <Label x:Name="lblWind"  
+            <Label x:Name="lblWind"  
                   Grid.Row="1"  
                   Grid.Column="2"  
                   HorizontalOptions="Center"  
-                   />  
+                   />
 
-       </Grid>  
+        </Grid>  
 
-       <CollectionView Grid.Row="4" x:Name="CvWeather" HeightRequest="100">  
+       <CollectionView Grid.Row="4" x:Name="WeatherCollection" HeightRequest="100">  
 
            <CollectionView.ItemsLayout>  
                <LinearItemsLayout Orientation="Horizontal"  
@@ -120,7 +120,7 @@
                        <Label Grid.Row="2"  
                               FontSize="Small"  
                               HorizontalOptions="Center"
-                              TextColor="{Binding dateTime}"/>  
+                              Text="{Binding dateTime}"/>  
                    </Grid>  
                </DataTemplate>  
            </CollectionView.ItemTemplate>  

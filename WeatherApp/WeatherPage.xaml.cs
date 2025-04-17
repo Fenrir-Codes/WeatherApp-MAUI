@@ -12,7 +12,7 @@ public partial class WeatherPage : ContentPage
     {
         InitializeComponent();
         _listOfWeather = new ObservableCollection<ForecastItem>();
-        CvWeather.ItemsSource = _listOfWeather;
+        WeatherCollection.ItemsSource = _listOfWeather;
     }
 
     protected async override void OnAppearing()
@@ -69,7 +69,7 @@ public partial class WeatherPage : ContentPage
         {
             _listOfWeather.Add(item);
         }
-        CvWeather.ItemsSource = _listOfWeather;
+        WeatherCollection.ItemsSource = _listOfWeather;
 
         lblCity.Text = result.city?.name ?? "Unknown City";
         lblWeatherDescription.Text = result.list[0].weather?[0]?.description ?? "No description";

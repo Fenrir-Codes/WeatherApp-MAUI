@@ -29,7 +29,7 @@ namespace WeatherApp.Models
     public class ForecastItem
     {
         public int dt { get; set; }
-        public string dateTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(dt);
+        public string dateTime => DateTimeOffset.FromUnixTimeSeconds(dt).UtcDateTime.ToString("HH:mm");
         public Main? main { get; set; }
         public List<Weather>? weather { get; set; }
         public Clouds? clouds { get; set; }
