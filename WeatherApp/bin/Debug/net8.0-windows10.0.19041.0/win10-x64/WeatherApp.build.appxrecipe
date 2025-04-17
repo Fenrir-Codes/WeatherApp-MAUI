@@ -61,8 +61,23 @@
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_04n.scale-100.png">
-      <PackagePath>icon_04n.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_09n.scale-100.png">
+      <PackagePath>icon_09n.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_11n.scale-100.png">
+      <PackagePath>icon_11n.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_10n.scale-100.png">
+      <PackagePath>icon_10n.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_13n.scale-100.png">
+      <PackagePath>icon_13n.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_01n.scale-100.png">
+      <PackagePath>icon_01n.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_50n.scale-100.png">
+      <PackagePath>icon_50n.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_03n.scale-100.png">
       <PackagePath>icon_03n.scale-100.png</PackagePath>
@@ -70,59 +85,47 @@
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_02n.scale-100.png">
       <PackagePath>icon_02n.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_09n.scale-100.png">
-      <PackagePath>icon_09n.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_01n.scale-100.png">
-      <PackagePath>icon_01n.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_10n.scale-100.png">
-      <PackagePath>icon_10n.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_11n.scale-100.png">
-      <PackagePath>icon_11n.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_50n.scale-100.png">
-      <PackagePath>icon_50n.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_13n.scale-100.png">
-      <PackagePath>icon_13n.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_04d.scale-100.png">
-      <PackagePath>icon_04d.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_03d.scale-100.png">
-      <PackagePath>icon_03d.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_09d.scale-100.png">
-      <PackagePath>icon_09d.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\humidity.scale-100.png">
-      <PackagePath>humidity.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_04n.scale-100.png">
+      <PackagePath>icon_04n.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_01d.scale-100.png">
       <PackagePath>icon_01d.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_02d.scale-100.png">
-      <PackagePath>icon_02d.scale-100.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_10d.scale-100.png">
       <PackagePath>icon_10d.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_11d.scale-100.png">
-      <PackagePath>icon_11d.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_50d.scale-100.png">
       <PackagePath>icon_50d.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchicon.scale-100.png">
-      <PackagePath>searchicon.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_11d.scale-100.png">
+      <PackagePath>icon_11d.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_13d.scale-100.png">
+      <PackagePath>icon_13d.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_02d.scale-100.png">
+      <PackagePath>icon_02d.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_03d.scale-100.png">
+      <PackagePath>icon_03d.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-100.png">
+      <PackagePath>location.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\humidity.scale-100.png">
+      <PackagePath>humidity.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\wind.scale-100.png">
       <PackagePath>wind.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_13d.scale-100.png">
-      <PackagePath>icon_13d.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchicon.scale-100.png">
+      <PackagePath>searchicon.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_09d.scale-100.png">
+      <PackagePath>icon_09d.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\icon_04d.scale-100.png">
+      <PackagePath>icon_04d.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>

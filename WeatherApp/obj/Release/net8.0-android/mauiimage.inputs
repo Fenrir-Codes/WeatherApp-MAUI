@@ -17,6 +17,7 @@ File=Resources\Images\icon_13d.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsA
 File=Resources\Images\icon_13n.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\icon_50d.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\icon_50n.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
+File=Resources\Images\location.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\searchicon.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\wind.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\AppIcon\appicon.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=True;ForegroundScale=;ForegroundFile=

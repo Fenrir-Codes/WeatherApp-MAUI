@@ -37,6 +37,7 @@ public partial class WeatherPage : ContentPage
             await DisplayAlert("Error", "Error while fetching weather data!", "OK");
         }
 
+
     }
 
     #region Gettint the weather start
@@ -90,7 +91,7 @@ public partial class WeatherPage : ContentPage
     #endregion
 
     #region Tapping the the location button
-    private async void TapLocation_Tapped(object sender, EventArgs e)
+    private async void GetMyCurrentLocation(object sender, EventArgs e)
     {
         var result = await ApiService.GetWeatherByLocation();
 
@@ -108,11 +109,15 @@ public partial class WeatherPage : ContentPage
     #region Getting the weather by city name
     private async void ImageButton_Clicked(object sender, EventArgs e)
     {
-        var cityName = await DisplayPromptAsync(title: "", message: "", placeholder: "Search weather by city name", accept: "Search", cancel: "Cancel");
+        var cityName = await DisplayPromptAsync(title: "Search City", message: "", placeholder: "Search weather by city name", accept: "Search", cancel: "Cancel");
 
         if (!string.IsNullOrWhiteSpace(cityName))
         {
             await GetWeatherByCityName(cityName);
+        }
+        else if (cityName == null)
+        {
+            return;
         }
         else
         {
