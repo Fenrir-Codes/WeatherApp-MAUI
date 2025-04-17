@@ -19,6 +19,13 @@ public partial class WeatherPage : ContentPage
     {
         base.OnAppearing();
 
+        //Checking network connectivity
+        if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+        {
+            await DisplayAlert("No Internet", "There is no internet connection.", "OK");
+            return;
+        }
+
         var result = await ApiService.GetWeatherByLocation();
 
         if (result != null)
