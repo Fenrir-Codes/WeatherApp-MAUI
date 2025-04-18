@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mJD4QzY6BJA=",
+  "dgSpecHash": "HzyOEXLV0fk=",
   "success": true,
   "projectFilePath": "H:\\C# Project Reopsitories\\repos\\WeatherApp\\WeatherApp\\WeatherApp.csproj",
   "expectedPackageFiles": [
@@ -121,14 +121,9 @@
     "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.android.runtime.34.android-x86\\34.0.147\\microsoft.android.runtime.34.android-x86.34.0.147.nupkg.sha512",
     "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.ios.ref.net8.0_18.0\\18.0.8319\\microsoft.ios.ref.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.ios.runtime.iossimulator-x64.net8.0_18.0\\18.0.8319\\microsoft.ios.runtime.iossimulator-x64.net8.0_18.0.18.0.8319.nupkg.sha512",
-    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.maccatalyst.runtime.maccatalyst-arm64.net8.0_18.0\\18.0.8319\\microsoft.maccatalyst.runtime.maccatalyst-arm64.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0\\18.0.8319\\microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0.18.0.8319.nupkg.sha512",
     "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.maccatalyst.ref.net8.0_18.0\\18.0.8319\\microsoft.maccatalyst.ref.net8.0_18.0.18.0.8319.nupkg.sha512",
-    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.15\\microsoft.netcore.app.crossgen2.win-x64.8.0.15.nupkg.sha512",
-    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512",
-    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.15\\microsoft.aspnetcore.app.runtime.win-x64.8.0.15.nupkg.sha512",
-    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.15\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.15.nupkg.sha512",
-    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.15\\microsoft.netcore.app.runtime.win-x64.8.0.15.nupkg.sha512"
+    "C:\\Users\\Joseph\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []
 }

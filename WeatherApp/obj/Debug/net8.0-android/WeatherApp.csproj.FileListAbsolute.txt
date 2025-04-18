@@ -543,7 +543,6 @@ H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\assets\zh-Hant\Microsoft.Maui.Controls.resources.dll
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\assets\zh-HK\Microsoft.Maui.Controls.resources.dll
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\assets\_Microsoft.Android.Resource.Designer.dll
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\typemaps.arm64-v8a.ll
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\AndroidManifest.xml
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\AndroidManifest.xml
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\src\mono\MonoRuntimeProvider.java
@@ -553,7 +552,6 @@ H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\static.flag
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\__environment__.txt
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\buildid.txt
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\environment.arm64-v8a.ll
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\src\androidx\activity\ktx\R.java
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\src\androidx\activity\R.java
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\src\androidx\annotation\experimental\R.java
@@ -1052,13 +1050,6 @@ H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\bin\packaged_resources
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\src\com\companyname\weatherapp\R.java
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\_CompileJava.FileList.txt
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\compressed_assemblies.arm64-v8a.ll
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\typemaps.arm64-v8a.o
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\environment.arm64-v8a.o
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\compressed_assemblies.arm64-v8a.o
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\marshal_methods.arm64-v8a.o
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\jni_remap.arm64-v8a.o
-H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\bin\classes.dex
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\bin\classes2.dex
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\stamp\_CleanIntermediateIfNeeded.stamp
@@ -1069,3 +1060,12 @@ H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\typemaps.x86_64.ll
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\environment.x86_64.ll
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\compressed_assemblies.x86_64.ll
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\typemaps.x86_64.o
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\environment.x86_64.o
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\compressed_assemblies.x86_64.o
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\marshal_methods.x86_64.o
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\android\jni_remap.x86_64.o
+H:\C# Project Reopsitories\repos\WeatherApp\WeatherApp\obj\Debug\net8.0-android\app_shared_libraries\x86_64\libxamarin-app.so

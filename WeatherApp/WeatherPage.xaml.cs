@@ -57,14 +57,26 @@ public partial class WeatherPage : ContentPage
     #region Getting the data by city name
     private async Task GetWeatherByCityName(string cityName)
     {
-        var result = await ApiService.GetWeatherByCityName(cityName);
-        if (result != null)
+        try
         {
-            await UpdateWeatherUI(result);
+            var result = await ApiService.GetWeatherByCityName(cityName);
+
+            if (result != null)
+            {
+                await UpdateWeatherUI(result);
+            }
+            else
+            {
+                await DisplayAlert("City Not Found", "No weather data found for the specified city name.", "OK");
+            }
         }
-        else
+        catch (HttpRequestException ex)
         {
-            await DisplayAlert("Error", "Error while fetching weather data!", "OK");
+            await DisplayAlert("Error", "City name not found!", "OK");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Unexpected Error", $"An error occurred: {ex.Message}", "OK");
         }
     }
     #endregion
@@ -79,11 +91,12 @@ public partial class WeatherPage : ContentPage
         }
         WeatherCollection.ItemsSource = _listOfWeather;
 
-        lblCity.Text = result.city?.name ?? "Unknown City";
+        lblCity.Text = result.city?.name + ", " + result.city.country ?? "Unknown City";
         lblWeatherDescription.Text = result.list[0].weather?[0]?.description ?? "No description";
         lblTemperature.Text = result.list[0].main?.temperature + "°C" ?? "N/A";
+        lblFeelsLike.Text = result.list[0].main.FeelsLike + "°C" ?? "N/A";
         lblHunidity.Text = result.list[0].main?.humidity + "%" ?? "N/A";
-        lblWind.Text = result.list[0].wind?.speed + "km/h" ?? "N/A";
+        lblWind.Text = (result.list[0].wind.speed * 3.6).ToString("0") + " km/h";
         ImgWeatherIcon.Source = result.list[0].weather?[0]?.customIcon ?? string.Empty;
 
         await Task.Yield();
@@ -93,15 +106,26 @@ public partial class WeatherPage : ContentPage
     #region Tapping the the location button
     private async void GetMyCurrentLocation(object sender, EventArgs e)
     {
-        var result = await ApiService.GetWeatherByLocation();
+        try
+        {
+            var result = await ApiService.GetWeatherByLocation();
 
-        if (result != null)
-        {
-            await UpdateWeatherUI(result);
+            if (result != null)
+            {
+                await UpdateWeatherUI(result);
+            }
+            else
+            {
+                await DisplayAlert("Location Error", "Unable to fetch weather data for your location.", "OK");
+            }
         }
-        else
+        catch (HttpRequestException)
         {
-            await DisplayAlert("Error", "Error while fetching weather data!", "OK");
+            await DisplayAlert("Network Error", "Unable to reach the weather service.", "OK");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Unexpected Error", $"An error occurred: {ex.Message}", "OK");
         }
     }
     #endregion

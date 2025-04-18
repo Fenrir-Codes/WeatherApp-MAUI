@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Globalization;
 
 namespace WeatherApp.Models
 {
@@ -29,7 +30,8 @@ namespace WeatherApp.Models
     public class ForecastItem
     {
         public int dt { get; set; }
-        public string dateTime => DateTimeOffset.FromUnixTimeSeconds(dt).UtcDateTime.ToString("HH:mm");
+        public string dateTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(dt);
+        // public string dateTime => DateTimeOffset.FromUnixTimeSeconds(dt).UtcDateTime.ToString("HH:mm");
         public Main? main { get; set; }
         public List<Weather>? weather { get; set; }
         public Clouds? clouds { get; set; }
@@ -39,6 +41,7 @@ namespace WeatherApp.Models
         public Sys? sys { get; set; }
         public string? dt_txt { get; set; }
         public Rain? rain { get; set; }
+        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date) ? date.ToString("dddd", new CultureInfo("en-US")) : null;
     }
 
     public class Main
@@ -46,6 +49,7 @@ namespace WeatherApp.Models
         public double temp { get; set; }
         public double temperature => Math.Round(temp);
         public double feels_like { get; set; }
+        public string FeelsLike => Math.Round(feels_like).ToString("0");
         public double temp_min { get; set; }
         public double temp_max { get; set; }
         public int pressure { get; set; }

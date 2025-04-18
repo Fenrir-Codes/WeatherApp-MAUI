@@ -4,6 +4,7 @@ using WeatherApp.Models;
 namespace WeatherApp.Services
 
 //api.openweathermap.org/data/2.5/forecast? q = { city name }&appid={API key}
+//https://api.openweathermap.org/data/2.5/forecast?lat=55.704660&lon=12.542107&units=metric&appid=1aa634bc0231b4af1904ccd51ed1604a
 {
     internal static class ApiService
     {
@@ -31,7 +32,16 @@ namespace WeatherApp.Services
         {
             var url = $"https://api.openweathermap.org/data/2.5/forecast?q={cityName}&units=metric&appid={ApiKey}";
             var response = await httpClient.GetStringAsync(url);
-            return JsonConvert.DeserializeObject<Root>(response);
+
+            if (response != null)
+            {
+                return JsonConvert.DeserializeObject<Root>(response);
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Error", "Something went wrong!", "OK");
+                return null;
+            }
         }
     }
 }
