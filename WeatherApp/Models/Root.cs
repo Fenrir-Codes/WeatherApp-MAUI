@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Globalization;
 
 namespace WeatherApp.Models
 {
@@ -41,7 +40,7 @@ namespace WeatherApp.Models
         public Sys? sys { get; set; }
         public string? dt_txt { get; set; }
         public Rain? rain { get; set; }
-        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date) ? date.ToString("dddd", new CultureInfo("en-US")) : null;
+        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date) ? date.ToString("dddd") : null;
     }
 
     public class Main
