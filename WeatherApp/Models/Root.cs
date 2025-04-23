@@ -2,6 +2,7 @@
 
 namespace WeatherApp.Models
 {
+
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class City
     {
@@ -41,6 +42,7 @@ namespace WeatherApp.Models
         public string? dt_txt { get; set; }
         public Rain? rain { get; set; }
         public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date) ? date.ToString("dddd") : null;
+
     }
 
     public class Main

@@ -11,9 +11,11 @@ public partial class WeatherPage : ContentPage
     public WeatherPage()
     {
         InitializeComponent();
+        loadingSpinner.IsVisible = true;
         _listOfWeather = new ObservableCollection<ForecastItem>();
         WeatherCollection.ItemsSource = _listOfWeather;
     }
+
 
     protected async override void OnAppearing()
     {
@@ -31,6 +33,7 @@ public partial class WeatherPage : ContentPage
         if (result != null)
         {
             await GetWeatherOnStart(result);
+            loadingSpinner.IsVisible = false;
         }
         else
         {
@@ -46,6 +49,7 @@ public partial class WeatherPage : ContentPage
         if (result != null)
         {
             await UpdateWeatherUI(result);
+            loadingSpinner.IsVisible = false;
         }
         else
         {
@@ -64,6 +68,7 @@ public partial class WeatherPage : ContentPage
             if (result != null)
             {
                 await UpdateWeatherUI(result);
+                loadingSpinner.IsVisible = false;
             }
             else
             {
@@ -91,10 +96,10 @@ public partial class WeatherPage : ContentPage
         }
         WeatherCollection.ItemsSource = _listOfWeather;
 
-        lblCity.Text = result.city?.name + ", " + result.city.country ?? "Unknown City";
+        lblCity.Text = result.city?.name + ", " + result.city?.country ?? "Unknown City";
         lblWeatherDescription.Text = result.list[0].weather?[0]?.description ?? "No description";
-        lblTemperature.Text = result.list[0].main?.temperature + "°C" ?? "N/A";
-        lblFeelsLike.Text = result.list[0].main.FeelsLike + "°C" ?? "N/A";
+        lblTemperature.Text = $"{result.list[0].main?.temperature ?? "N/A"}°C";
+        lblFeelsLike.Text = $"{result.list[0].main?.FeelsLike ?? "N/A"}°C";
         lblHunidity.Text = result.list[0].main?.humidity + "%" ?? "N/A";
         lblWind.Text = (result.list[0].wind.speed * 3.6).ToString("0") + " km/h";
         ImgWeatherIcon.Source = result.list[0].weather?[0]?.customIcon ?? string.Empty;
@@ -113,6 +118,7 @@ public partial class WeatherPage : ContentPage
             if (result != null)
             {
                 await UpdateWeatherUI(result);
+                loadingSpinner.IsVisible = false;
             }
             else
             {
@@ -138,6 +144,7 @@ public partial class WeatherPage : ContentPage
         if (!string.IsNullOrWhiteSpace(cityName))
         {
             await GetWeatherByCityName(cityName);
+            loadingSpinner.IsVisible = false;
         }
         else if (cityName == null)
         {
