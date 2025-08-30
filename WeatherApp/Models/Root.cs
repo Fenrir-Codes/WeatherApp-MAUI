@@ -31,7 +31,6 @@ namespace WeatherApp.Models
     {
         public int dt { get; set; }
         public string dateTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(dt);
-        // public string dateTime => DateTimeOffset.FromUnixTimeSeconds(dt).UtcDateTime.ToString("HH:mm");
         public Main? main { get; set; }
         public List<Weather>? weather { get; set; }
         public Clouds? clouds { get; set; }
@@ -41,8 +40,22 @@ namespace WeatherApp.Models
         public Sys? sys { get; set; }
         public string? dt_txt { get; set; }
         public Rain? rain { get; set; }
-        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date) ? date.ToString("dddd") : null;
 
+        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date)
+            ? date.ToString("dddd")
+            : null;
+
+        public string? DateFormatted => DateTime.TryParse(dt_txt, out var date)
+            ? date.ToString("dd/MM//yyyy")
+            : null;
+
+    }
+
+    public class ForecastDay
+    {
+        public string? DayName { get; set; }      // Monday, Tuesday...
+        public string? Date { get; set; }         // 01/09
+        public List<ForecastItem>? Items { get; set; }
     }
 
     public class Main
