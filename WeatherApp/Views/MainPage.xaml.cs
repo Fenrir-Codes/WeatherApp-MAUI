@@ -91,15 +91,12 @@ public partial class MainPage : ContentPage
         if (result?.list == null) return;
 
         // Csoportosítás napokra
-        var grouped = result.list
-            .GroupBy(f => f.DayOfWeek)
-            .Select(g => new ForecastDay
-            {
-                DayName = g.First().DayOfWeek,
-                Date = g.First().DateFormatted,
-                Items = g.ToList()
-            })
-            .ToList();
+        var grouped = result.list.GroupBy(f => f.DayOfWeek).Select(g => new ForecastDay
+        {
+            DayName = g.First().DayOfWeek,
+            Date = g.First().DateFormatted,
+            Items = g.ToList()
+        }).ToList();
 
         _listOfForecastDays.Clear();
         foreach (var day in grouped)

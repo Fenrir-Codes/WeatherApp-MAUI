@@ -46,7 +46,7 @@ namespace WeatherApp.Models
             : null;
 
         public string? DateFormatted => DateTime.TryParse(dt_txt, out var date)
-            ? date.ToString("dd/MM//yyyy")
+            ? date.ToString("dd/MM/yyyy")
             : null;
 
     }
