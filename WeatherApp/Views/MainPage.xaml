@@ -4,7 +4,7 @@
              x:Class="WeatherApp.Views.MainPage"
              Title="MainPage">
 
-    <Grid RowDefinitions="50,Auto,*,70" BackgroundColor="#455A64">
+    <Grid RowDefinitions="50,*,70" BackgroundColor="#455A64">
 
         <!-- Top background -->
         <BoxView Grid.Row="0" BackgroundColor="#455A64" />
@@ -38,7 +38,8 @@
             
         </Grid>
 
-        <VerticalStackLayout Grid.Row="1" Padding="5">
+        <ScrollView Grid.Row="1" Margin="0,10,0,10">
+            <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="15">
 
             <Grid  
                 RowDefinitions="50,100,25,30,25" 
@@ -160,11 +161,9 @@
 
             </Grid>
 
-        </VerticalStackLayout>
 
-        <!-- FORECAST CONTENT -->
-        <ScrollView Grid.Row="2" Margin="0,10,0,10">
-            <VerticalStackLayout Padding="20" Spacing="15">
+             <!-- FORECAST CONTENT -->
+
 
                 <!-- Activity indicator -->
                 <ActivityIndicator 

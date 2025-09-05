@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "H:\\GitHub repositories\\WeatherApp-MAUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9731F68-CCE8-4F17-B8A3-252416992D3B}|WeatherApp\\WeatherApp.csproj|h:\\github repositories\\weatherapp-maui\\weatherapp\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9731F68-CCE8-4F17-B8A3-252416992D3B}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B9731F68-CCE8-4F17-B8A3-252416992D3B}|WeatherApp\\WeatherApp.csproj|h:\\github repositories\\weatherapp-maui\\weatherapp\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B9731F68-CCE8-4F17-B8A3-252416992D3B}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9731F68-CCE8-4F17-B8A3-252416992D3B}|WeatherApp\\WeatherApp.csproj|h:\\github repositories\\weatherapp-maui\\weatherapp\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9731F68-CCE8-4F17-B8A3-252416992D3B}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,26 +30,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "H:\\GitHub repositories\\WeatherApp-MAUI\\WeatherApp\\Views\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "WeatherApp\\Views\\MainPage.xaml.cs",
               "ToolTip": "H:\\GitHub repositories\\WeatherApp-MAUI\\WeatherApp\\Views\\MainPage.xaml.cs",
               "RelativeToolTip": "WeatherApp\\Views\\MainPage.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwGAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-01T15:31:34.597Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "H:\\GitHub repositories\\WeatherApp-MAUI\\WeatherApp\\Views\\MainPage.xaml",
               "RelativeDocumentMoniker": "WeatherApp\\Views\\MainPage.xaml",
               "ToolTip": "H:\\GitHub repositories\\WeatherApp-MAUI\\WeatherApp\\Views\\MainPage.xaml",
               "RelativeToolTip": "WeatherApp\\Views\\MainPage.xaml",
-              "ViewState": "AgIAALIAAAAAAAAAAAAAAMoAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAACkAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-08-30T10:55:35.632Z",
               "EditorCaption": ""
