@@ -1,0 +1,6 @@
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\WeatherApp.csproj.AssemblyReference.cache
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\WeatherApp.GeneratedMSBuildEditorConfig.editorconfig
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\WeatherApp.AssemblyInfoInputs.cache
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\WeatherApp.AssemblyInfo.cs
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\WeatherApp.csproj.CoreCompileInputs.cache
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\obj\Debug\net8.0-windows10.0.19041.0\WeatherApp.sourcelink.json

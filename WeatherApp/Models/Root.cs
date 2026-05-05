@@ -1,19 +1,31 @@
 ﻿using Newtonsoft.Json;
-
 namespace WeatherApp.Models
+
 {
 
+
+
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
     public class City
     {
+
         public int id { get; set; }
+
         public string? name { get; set; }
+
         public Coord? coord { get; set; }
+
         public string? country { get; set; }
+
         public int population { get; set; }
+
         public int timezone { get; set; }
+
         public int sunrise { get; set; }
+
         public int sunset { get; set; }
+
     }
 
     public class Clouds
@@ -40,21 +52,14 @@ namespace WeatherApp.Models
         public Sys? sys { get; set; }
         public string? dt_txt { get; set; }
         public Rain? rain { get; set; }
-
-        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date)
-            ? date.ToString("dddd")
-            : null;
-
-        public string? DateFormatted => DateTime.TryParse(dt_txt, out var date)
-            ? date.ToString("dd/MM/yyyy")
-            : null;
-
+        public string? DayOfWeek => DateTime.TryParse(dt_txt, out var date)? date.ToString("dddd"): null;
+        public string? DateFormatted => DateTime.TryParse(dt_txt, out var date)? date.ToString("dd/MM/yyyy"): null;
     }
 
     public class ForecastDay
     {
-        public string? DayName { get; set; }      // Monday, Tuesday...
-        public string? Date { get; set; }         // 01/09
+        public string? DayName { get; set; } // Monday, Tuesday...
+        public string? Date { get; set; } // 01/09
         public List<ForecastItem>? Items { get; set; }
     }
 
@@ -84,7 +89,7 @@ namespace WeatherApp.Models
         public string? cod { get; set; }
         public int message { get; set; }
         public int cnt { get; set; }
-        public List<ForecastItem>? list { get; set; }
+        public List<ForecastItem>? list{ get; set; }
         public City? city { get; set; }
     }
 
@@ -108,6 +113,5 @@ namespace WeatherApp.Models
         public int deg { get; set; }
         public double gust { get; set; }
     }
-
 
 }
