@@ -2,293 +2,158 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.Views.MainPage"
-             Title="MainPage">
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
 
-    <Grid RowDefinitions="50,*,70" BackgroundColor="#455A64">
+    <Grid BackgroundColor="#1E3A8A">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#4A90E2" Offset="0.1" />
+                <GradientStop Color="#1E3A8A" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
 
-        <!-- Top background -->
-        <BoxView Grid.Row="0" BackgroundColor="#455A64" />
-        <!-- Middle background -->
-        <BoxView Grid.Row="1" BackgroundColor="#37474F" CornerRadius="25,25,0,0" />
-        <BoxView Grid.Row="2" BackgroundColor="#37474F" />
+        <RefreshView x:Name="mainRefreshView" Refreshing="OnRefreshing" RefreshColor="#4A90E2">
+            <ScrollView>
+                <VerticalStackLayout Padding="20,10" Spacing="10">
 
-        <!-- HEADER -->
-        <Grid Grid.Row="0" Padding="10">
+                    <Grid ColumnDefinitions="*" Margin="0,10,0,5">
+                        <Border Grid.Column="1"
+                                BackgroundColor="#20FFFFFF"
+                                Padding="0"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12"
+                                HeightRequest="45"
+                                WidthRequest="45"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSearchClicked" />
+                            </Border.GestureRecognizers>
+                            <Image Source="search_icon.png" 
+                                   HeightRequest="22" 
+                                   WidthRequest="22"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center" />
+                        </Border>
+                    </Grid>
 
-            <!-- Title -->
-            <Label 
-                Text="Weather Tracker" 
-                Grid.Row="0"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                FontSize="26"
-                FontAttributes="Bold"
-                TextColor="White" />
+                    <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                        <Image Source="location.png" HeightRequest="18" WidthRequest="18" />
+                        <Label x:Name="lblCity" Text="Loading..." FontSize="22" TextColor="White" FontAttributes="Bold" />
+                    </HorizontalStackLayout>
 
-            <!-- Subtitle -->
-            <HorizontalStackLayout 
-                Grid.Row="1"
-                Grid.ColumnSpan="3"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Spacing="6">
+                    <!-- Finomított ikon és hőmérséklet méret a Samsung kijelzőhöz -->
+                    <Image x:Name="ImgWeatherIcon" HeightRequest="130" WidthRequest="130" HorizontalOptions="Center" />
 
-            </HorizontalStackLayout>
-            
-        </Grid>
+                    <Label x:Name="lblTemperature" Text="--" FontSize="75" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,-10" />
 
-        <ScrollView Grid.Row="1" Margin="0,10,0,10">
-            <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="15">
+                    <Label x:Name="lblWeatherDescription" Text="--" FontSize="20" TextColor="White" HorizontalOptions="Center" Opacity="0.9" />
 
-            <Grid  
-                RowDefinitions="50,100,25,30,25" 
-                ColumnDefinitions="100,*,100"
-                HorizontalOptions="Fill">
+                    <!-- Információs kártya -->
+                    <Border BackgroundColor="#20000000" StrokeThickness="0" Padding="20" StrokeShape="RoundRectangle 25" Margin="0,10">
+                        <Grid ColumnDefinitions="*, *, *">
+                            <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="5">
+                                <Image Source="wind_icon.png" HeightRequest="22" WidthRequest="22" />
+                                <Label x:Name="lblWind" Text="--" TextColor="White" FontSize="12" HorizontalOptions="Center" />
+                                <Label Text="Wind" TextColor="White" FontSize="10" Opacity="0.6" HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="5">
+                                <Image Source="moisture.png" HeightRequest="22" WidthRequest="22" />
+                                <Label x:Name="lblHunidity" Text="--" TextColor="White" FontSize="12" HorizontalOptions="Center" />
+                                <Label Text="Humidity" TextColor="White" FontSize="10" Opacity="0.6" HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="5">
+                                <Image Source="feels_like.png" HeightRequest="22" WidthRequest="22"/>
+                                <Label x:Name="lblFeelsLike" Text="--" TextColor="White" FontSize="12" HorizontalOptions="Center" />
+                                <Label Text="Feels like" TextColor="White" FontSize="10" Opacity="0.6" HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
 
-                <!--<BoxView Grid.Row="1"  BackgroundColor="Blue" />
+                    <!-- Next Days szekció -->
+                    <Grid ColumnDefinitions="*, Auto" Margin="5,10,10,0">
+                        <Label Text="3 Hourly Forecast" 
+                               TextColor="White" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               VerticalOptions="Center" />
 
-                <BoxView Grid.Row="1" Grid.Column="1"  BackgroundColor="Red" />
+                        <Border Grid.Column="1" 
+                                BackgroundColor="#20FFFFFF" 
+                                StrokeThickness="0" 
+                                Padding="14,8" 
+                                StrokeShape="RoundRectangle 12"
+                                VerticalOptions="Center">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSevenDaysTapped" />
+                            </Border.GestureRecognizers>
+                            
+                            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                <Label Text="Next Days" 
+                                       TextColor="White" 
+                                       FontSize="13" 
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" />
+                                <Image Source="arrow_right.png" 
+                                       HeightRequest="16" 
+                                       WidthRequest="16" 
+                                       VerticalOptions="Center"  
+                                       Aspect="AspectFit" />
+                            </HorizontalStackLayout>
+                            
+                        </Border>
+                    </Grid>
 
-                <BoxView Grid.Row="1" Grid.Column="2" BackgroundColor="Blue" />-->
+                    <CollectionView x:Name="forecastCollection" ItemsLayout="HorizontalList" HeightRequest="130">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <!-- Növelve a szélességet 100-ra, hogy kényelmesen elférjen a per jel is -->
+                                <Border Margin="0,0,15,0" Padding="12" BackgroundColor="#20FFFFFF" StrokeThickness="0" StrokeShape="RoundRectangle 20" WidthRequest="100">
+                                    <VerticalStackLayout Spacing="6" VerticalOptions="Center">
 
-                <!-- City -->
-                <Label 
-                    Margin="5"
-                    Grid.Row="0"
-                    Grid.ColumnSpan="3"
-                    x:Name="lblCity"
-                    FontSize="Large"
-                    HorizontalOptions="Center"
-                    TextColor="white"
-                    FontAttributes="Bold"
-                    Text="Loading..." />
+                                        <!-- Ez a rész teszi egy sorba a két hőmérsékletet -->
+                                        <Label HorizontalOptions="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span 
+                                                        Text="{Binding main.temperature, StringFormat='{0:F0}°'}" 
+                                                        FontSize="15" 
+                                                        FontAttributes="Bold" 
+                                                        TextColor="White" />
+                                                    <Span 
+                                                        Text=" " 
+                                                        FontSize="13" 
+                                                        TextColor="White" 
+                                                    />
+                                                    <Span Text="{Binding main.temp_min, StringFormat='{0:F0}°'}" 
+                                                        FontSize="12" 
+                                                        TextColor="White" 
+                                                    />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                <!-- Weather Icon -->
-                <Image 
-                    Grid.Row="1"
-                    Grid.Column="1" 
-                    x:Name="ImgWeatherIcon"
-                    HeightRequest="80"
-                    WidthRequest="80"
-                    HorizontalOptions="Center"
-                />
+                                        <Image 
+                                            Source="{Binding weather[0].customIcon}" 
+                                            HeightRequest="35" 
+                                            WidthRequest="35" 
+                                            HorizontalOptions="Center" />
 
-                <!-- Weather description -->
-                <Label 
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    x:Name="lblWeatherDescription"
-                    FontSize="Micro"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    TextColor="White" 
-                />
-
-                <!-- Humidity -->
-                <Image 
-                    Grid.Row="1" 
-                    Grid.Column="0"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="40"
-                    Source="moisture.png" 
-                />
-
-                <Label 
-                    x:Name="lblHunidity"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    TextColor="White"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
-                    FontSize="Small"
-                    Text="Loading..." 
-                />
-
-                <!-- Temperature -->
-                <Label 
-                    x:Name="lblTemperature"
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    Grid.RowSpan="2"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    FontSize="50"
-                    TextColor="White"
-                    FontAttributes="Bold" 
-                />
-
-                <!-- Windspeed -->
-                <Image 
-                    Grid.Row="1" 
-                    Grid.Column="2"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="40"   
-                    Source="wind_icon.png" 
-                />
-
-                <Label 
-                    x:Name="lblWind"
-                    TextColor="White"
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    FontSize="Small"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
-                    Text="Loading..." 
-                />
-
-                <Label 
-                    Grid.Row="2" 
-                    Grid.Column="2" 
-                    Text="Feels like: "
-                    HorizontalOptions="Start"
-                    FontSize="Micro" 
-                    TextColor="White" 
-                />
-
-                <Label 
-                    x:Name="lblFeelsLike"
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    HorizontalOptions="End"
-                    FontSize="Micro"
-                    TextColor="White"
-                    Text="--" 
-                />
-
-            </Grid>
-
-
-             <!-- FORECAST CONTENT -->
-
-
-                <!-- Activity indicator -->
-                <ActivityIndicator 
-                    x:Name="loadingSpinner"
-                    IsRunning="True"
-                    IsVisible="True"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    Color="#B0BEC5"/>
-                
-                <!-- Forecast list -->
-                <CollectionView x:Name="forecastCollection" ItemsSource="{Binding _listOfForecastDays}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame Margin="5" Padding="0" BorderColor="#546E7A" CornerRadius="8" BackgroundColor="AliceBlue">
-                                <VerticalStackLayout>
-                                    <!-- Header: left side the name of the day, on right side the date -->
-                                    <Grid ColumnDefinitions="*,Auto" BackgroundColor="#546E7A" Margin="0,0,0,5">
                                         <Label 
-                                            Text="{Binding DayName}"
-                                            FontSize="Medium"
-                                            TextColor="white"
-                                            Grid.Column="0"
-                                            Padding="5"/>
-                                        
-                                        <Label 
-                                            Text="{Binding Date}"
-                                            FontSize="Medium"
-                                            TextColor="white"
-                                            HorizontalOptions="End"
-                                            Grid.Column="1"
-                                            Padding="5"/>
-                                    </Grid>
+                                            Text="{Binding dateTime}" 
+                                            FontSize="11" 
+                                            TextColor="White" 
+                                            Opacity="0.7" 
+                                            HorizontalOptions="Center" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
-                                    <!-- Inner CollectionView for hourly forecast -->
-                                    <CollectionView ItemsSource="{Binding Items}" ItemsLayout="HorizontalList" HeightRequest="100">
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-                                                <VerticalStackLayout Padding="5" WidthRequest="70" HorizontalOptions="Center">
-                                                    <!-- Time -->
-                                                    <Label 
-                                                        Text="{Binding dateTime}" 
-                                                        FontSize="Small"
-                                                        TextColor="Gray"
-                                                        HorizontalOptions="Center"/>
-                                                    <!-- Icon -->
-                                                    <Image 
-                                                        Source="{Binding weather[0].customIcon}" 
-                                                        HeightRequest="40" WidthRequest="40" 
-                                                        HorizontalOptions="Center"/>
-                                                    <!-- Temperature -->
-                                                    <Label 
-                                                        Text="{Binding main.temperature, StringFormat='{0}°C'}"
-                                                        FontSize="Small"
-                                                        TextColor="Black"
-                                                        HorizontalOptions="Center"/>
-                                                </VerticalStackLayout>
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                    </CollectionView>
-                                </VerticalStackLayout>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-            </VerticalStackLayout>
-        </ScrollView>
-
-        <!-- FOOTER -->
-        <Grid Grid.Row="3"
-              BackgroundColor="#37474F"
-              ColumnDefinitions="*,5,*"  
-              Padding="5">
-
-            <!-- Current location -->
-            <VerticalStackLayout 
-                Grid.Column="0"
-                HorizontalOptions="Fill"
-                VerticalOptions="Center"
-                Spacing="2">
-                
-                <Image Source="location.png"
-                       WidthRequest="32"
-                       HeightRequest="32"
-                       HorizontalOptions="Center"/>
-                
-                <Label Text="Current location"
-                       FontSize="16"
-                       TextColor="White"
-                       HorizontalOptions="Center"/>
-                
-                <VerticalStackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GetMyCurrentLocation"/>
-                </VerticalStackLayout.GestureRecognizers>
-            </VerticalStackLayout>
-
-            <!-- Divider -->
-            <BoxView Grid.Column="1"
-                     WidthRequest="2"
-                     BackgroundColor="White"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Fill"
-                     Margin="0,2"
-                     CornerRadius="1"/>
-
-            <!-- Search -->
-            <VerticalStackLayout Grid.Column="2"
-                                 HorizontalOptions="Fill"
-                                 VerticalOptions="Center"
-                                 Spacing="2">
-                <Image Source="search_icon.png"
-                       WidthRequest="32"
-                       HeightRequest="32"
-                       HorizontalOptions="Center"/>
-                <Label Text="Search"
-                       FontSize="16"
-                       TextColor="White"
-                       HorizontalOptions="Center"/>
-                <VerticalStackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="SearchLocation"/>
-                </VerticalStackLayout.GestureRecognizers>
-            </VerticalStackLayout>
-        </Grid>
-
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
     </Grid>
-
 </ContentPage>

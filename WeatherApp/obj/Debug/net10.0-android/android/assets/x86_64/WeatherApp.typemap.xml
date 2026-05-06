@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="WeatherApp" mvid="95fe368c2f7b441d8ea49f8326174ab1">
+<api type="debug" assembly-name="WeatherApp" mvid="6a22f48e87e44511972d6df2faf5abc3">
   <java-to-managed>
     <entry java-name="crc64a66eeea9f8259275/MainActivity" managed-name="WeatherApp.MainActivity, WeatherApp" managed-type-token-id="33554440" />
     <entry java-name="crc64a66eeea9f8259275/MainApplication" managed-name="WeatherApp.MainApplication, WeatherApp" managed-type-token-id="33554441" />
