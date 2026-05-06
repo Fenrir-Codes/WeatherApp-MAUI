@@ -3103,7 +3103,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f070070
 int drawable ic_mtrl_chip_checked_circle 0x7f070071
 int drawable ic_mtrl_chip_close_circle 0x7f070072
 int drawable ic_search_black_24 0x7f070073
-int drawable icon_01_d 0x7f070074
+int drawable icon_01d 0x7f070074
 int drawable icon_01n 0x7f070075
 int drawable icon_02d 0x7f070076
 int drawable icon_02n 0x7f070077

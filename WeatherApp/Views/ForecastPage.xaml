@@ -30,40 +30,81 @@
             <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,40,0">
                 <!-- Város neve -->
                 <Label x:Name="lblCityName" 
-               TextColor="White" 
-               FontSize="22" 
-               FontAttributes="Bold" 
-               HorizontalOptions="Center" />
+                    TextColor="White" 
+                    FontSize="22" 
+                    FontAttributes="Bold" 
+                    HorizontalOptions="Center" />
 
                 <!-- Alfelirat -->
                 <Label Text="Next Days Forecast" 
-               TextColor="White" 
-               FontSize="13" 
-               Opacity="0.7" 
-               HorizontalOptions="Center" />
+                    TextColor="White" 
+                    FontSize="13" 
+                    Opacity="0.7" 
+                    HorizontalOptions="Center" />
             </VerticalStackLayout>
         </Grid>
 
         <CollectionView Grid.Row="1" ItemsSource="{Binding _listOfForecastDays}" SelectionMode="None" Margin="20,20">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border BackgroundColor="#20FFFFFF" Margin="0,0,0,20" Padding="25" StrokeThickness="0" StrokeShape="RoundRectangle 15">
-                        <Grid ColumnDefinitions="*, Auto, Auto">
-                            <VerticalStackLayout Grid.Column="0" VerticalOptions="Center">
-                                <Label Text="{Binding DayName}" TextColor="White" FontSize="18" FontAttributes="Bold" />
-                                <Label Text="{Binding Date}" TextColor="White" FontSize="13" Opacity="0.7" Margin="0,2,0,0" />
+                 
+                    <Border BackgroundColor="#20FFFFFF" Margin="0,0,0,15" Padding="25,25,25,10" StrokeThickness="0" StrokeShape="RoundRectangle 20">
+
+                        <!-- 3 sor: Felső a tartalomnak, egy üres köztes hely, és egy alsó a dátumnak -->
+                        <Grid ColumnDefinitions="*, Auto, Auto" RowDefinitions="Auto, *, Auto">
+
+                            <!-- BAL OLDAL: Nap neve és Description -->
+                            <VerticalStackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center">
+                                <Label Text="{Binding DayName}" 
+                               TextColor="White" 
+                               FontSize="18" 
+                               FontAttributes="Bold" />
+                                <Label Text="{Binding Items[0].weather[0].description}" 
+                               TextColor="White" 
+                               FontSize="13" 
+                               Opacity="0.7" 
+                               Margin="0,2,0,0" />
                             </VerticalStackLayout>
 
-                            <Image Grid.Column="1" Source="{Binding Items[0].weather[0].customIcon}" HeightRequest="35" WidthRequest="35" Margin="0,0,25,0" />
+                            <!-- KÖZÉP: Ikon (Az első két soron átível) -->
+                            <Image Grid.Column="1" 
+                           Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Source="{Binding Items[0].weather[0].customIcon}" 
+                           HeightRequest="35" 
+                           WidthRequest="35" 
+                           Margin="0,0,25,0" 
+                           VerticalOptions="Center"/>
 
-                            <HorizontalStackLayout Grid.Column="2" VerticalOptions="Center">
-                                <Label Text="{Binding Items[0].main.temperature, StringFormat='{0:F0}°'}" TextColor="White" FontSize="20" FontAttributes="Bold" />
-                                <Label Text="{Binding Items[0].main.temp_min, StringFormat=' / {0:F0}°'}" TextColor="White" Opacity="0.6" FontSize="16" VerticalOptions="End" Margin="5,0,0,0"/>
+                            <!-- JOBB FELSŐ: Hőmérséklet -->
+                            <HorizontalStackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End">
+                                <Label Text="{Binding Items[0].main.temperature, StringFormat='{0:F0}°'}" 
+                               TextColor="White" 
+                               FontSize="20" 
+                               FontAttributes="Bold" />
+                                <Label Text="{Binding Items[0].main.temp_min, StringFormat=' / {0:F0}°'}" 
+                               TextColor="White" 
+                               Opacity="0.6" 
+                               FontSize="16" 
+                               VerticalOptions="End" 
+                               Margin="5,0,0,0"/>
                             </HorizontalStackLayout>
+
+                            <!-- JOBB ALSÓ: Dátum (A harmadik sorba került) -->
+                            <Label Grid.Column="0" 
+                           Grid.ColumnSpan="3"
+                           Grid.Row="2" 
+                           Text="{Binding Date}" 
+                           TextColor="White" 
+                           FontSize="10" 
+                           Opacity="0.4" 
+                           HorizontalOptions="End" 
+                           VerticalOptions="End" />
                         </Grid>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
     </Grid>
 </ContentPage>
