@@ -40,38 +40,35 @@
 
                     <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
                         <Image Source="location.png" HeightRequest="18" WidthRequest="18" />
-                        <Label x:Name="lblCity" Text="Loading..." FontSize="22" TextColor="White" FontAttributes="Bold" />
+                        <Label x:Name="lblCity" Text="{Binding WeatherData.city.name, FallbackValue='Loading...'}" FontSize="22" TextColor="White" FontAttributes="Bold" />
                     </HorizontalStackLayout>
 
-                    <!-- Finomított ikon és hőmérséklet méret a Samsung kijelzőhöz -->
-                    <Image x:Name="ImgWeatherIcon" HeightRequest="130" WidthRequest="130" HorizontalOptions="Center" />
+                    <Image x:Name="ImgWeatherIcon" Source="{Binding WeatherData.list[0].weather[0].customIcon}" HeightRequest="130" WidthRequest="130" HorizontalOptions="Center" />
 
-                    <Label x:Name="lblTemperature" Text="--" FontSize="75" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,-10" />
+                    <Label x:Name="lblTemperature" Text="{Binding WeatherData.list[0].main.temperature, StringFormat='{0:F0}°'}" FontSize="75" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,-10" />
 
-                    <Label x:Name="lblWeatherDescription" Text="--" FontSize="20" TextColor="White" HorizontalOptions="Center" Opacity="0.9" />
+                    <Label Text="{Binding WeatherData.list[0].weather[0].description}" FontSize="20" TextColor="White" HorizontalOptions="Center" Opacity="0.9" />
 
-                    <!-- Információs kártya -->
                     <Border BackgroundColor="#20000000" StrokeThickness="0" Padding="20" StrokeShape="RoundRectangle 20" Margin="0,10">
                         <Grid ColumnDefinitions="*, *, *">
                             <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="5">
                                 <Image Source="wind_icon.png" HeightRequest="22" WidthRequest="22" />
-                                <Label x:Name="lblWind" Text="--" TextColor="White" FontSize="12" HorizontalOptions="Center" />
+                                <Label x:Name="lblWind" Text="{Binding WeatherData.list[0].wind.speed, StringFormat='{0:F0} km/h'}" TextColor="White" FontSize="12" HorizontalOptions="Center" />
                                 <Label Text="Wind" TextColor="White" FontSize="10" Opacity="0.6" HorizontalOptions="Center" />
                             </VerticalStackLayout>
                             <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="5">
                                 <Image Source="moisture.png" HeightRequest="22" WidthRequest="22" />
-                                <Label x:Name="lblHunidity" Text="--" TextColor="White" FontSize="12" HorizontalOptions="Center" />
+                                <Label x:Name="lblHunidity" Text="{Binding WeatherData.list[0].main.humidity, StringFormat='{0}%'}" TextColor="White" FontSize="12" HorizontalOptions="Center" />
                                 <Label Text="Humidity" TextColor="White" FontSize="10" Opacity="0.6" HorizontalOptions="Center" />
                             </VerticalStackLayout>
                             <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="5">
                                 <Image Source="feels_like.png" HeightRequest="22" WidthRequest="22"/>
-                                <Label x:Name="lblFeelsLike" Text="--" TextColor="White" FontSize="12" HorizontalOptions="Center" />
+                                <Label x:Name="lblFeelsLike" Text="{Binding WeatherData.list[0].main.FeelsLike, StringFormat='{0}°'}" TextColor="White" FontSize="12" HorizontalOptions="Center" />
                                 <Label Text="Feels like" TextColor="White" FontSize="10" Opacity="0.6" HorizontalOptions="Center" />
                             </VerticalStackLayout>
                         </Grid>
                     </Border>
 
-                    <!-- Next Days szekció -->
                     <Grid ColumnDefinitions="*, Auto" Margin="5,10,10,0">
                         <Label Text="3 Hourly Forecast" 
                                TextColor="White" 
@@ -88,7 +85,7 @@
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnSevenDaysTapped" />
                             </Border.GestureRecognizers>
-                            
+
                             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
                                 <Label Text="Next Days" 
                                        TextColor="White" 
@@ -101,18 +98,16 @@
                                        VerticalOptions="Center"  
                                        Aspect="AspectFit" />
                             </HorizontalStackLayout>
-                            
+
                         </Border>
                     </Grid>
 
                     <CollectionView x:Name="forecastCollection" ItemsLayout="HorizontalList" HeightRequest="130">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <!-- Növelve a szélességet 100-ra, hogy kényelmesen elférjen a per jel is -->
                                 <Border Margin="0,0,15,0" Padding="12" BackgroundColor="#20FFFFFF" StrokeThickness="0" StrokeShape="RoundRectangle 20" WidthRequest="100">
                                     <VerticalStackLayout Spacing="6" VerticalOptions="Center">
 
-                                        <!-- Ez a rész teszi egy sorba a két hőmérsékletet -->
                                         <Label HorizontalOptions="Center">
                                             <Label.FormattedText>
                                                 <FormattedString>

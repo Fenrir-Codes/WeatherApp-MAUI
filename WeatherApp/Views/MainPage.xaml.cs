@@ -1,25 +1,33 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using WeatherApp.Models;
 using WeatherApp.Services;
 
 namespace WeatherApp.Views;
 
-public partial class MainPage : ContentPage
+public partial class MainPage : ContentPage, INotifyPropertyChanged
 {
+    private Root _weatherData;
+    public Root WeatherData
+    {
+        get => _weatherData;
+        set { _weatherData = value; OnPropertyChanged(); }
+    }
+
     public ObservableCollection<ForecastDay> _listOfForecastDays { get; set; } = new ObservableCollection<ForecastDay>();
     private bool _isFirstLoad = true;
 
     public MainPage()
     {
         InitializeComponent();
-        forecastCollection.ItemsSource = _listOfForecastDays;
         this.BindingContext = this;
     }
 
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if (_isFirstLoad && (_listOfForecastDays.Count == 0))
+        if (_isFirstLoad)
         {
             await RefreshWeatherData();
             _isFirstLoad = false;
@@ -30,23 +38,20 @@ public partial class MainPage : ContentPage
     {
         if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
         {
-            await DisplayAlertAsync("Connection error", "No internet access.", "OK");
+            await DisplayAlertAsync("Error", "No internet access.", "OK");
             return;
         }
 
         var result = await ApiService.GetWeatherByLocation();
-        if (result != null)
-        {
-            await UpdateWeatherUI(result);
-        }
+        if (result != null) UpdateWeatherUI(result);
         mainRefreshView.IsRefreshing = false;
     }
 
-    private async void OnRefreshing(object sender, EventArgs e) => await RefreshWeatherData();
-
-    private async Task UpdateWeatherUI(Root result)
+    private void UpdateWeatherUI(Root result)
     {
         if (result?.list == null) return;
+
+        WeatherData = result;
 
         var grouped = result.list.GroupBy(f => f.DayOfWeek).Select(g => new ForecastDay
         {
@@ -56,58 +61,40 @@ public partial class MainPage : ContentPage
         }).Skip(1).ToList();
 
         _listOfForecastDays.Clear();
-        foreach (var day in grouped)
-        {
-            _listOfForecastDays.Add(day);
-        }
+        foreach (var day in grouped) _listOfForecastDays.Add(day);
 
         forecastCollection.ItemsSource = result.list.Take(8).ToList();
-
-        lblCity.Text = result.city?.name;
-        lblTemperature.Text = result.list[0].main?.temperature.ToString("0") + "°";
-        lblWeatherDescription.Text = result.list[0].weather?[0]?.description;
-        lblHunidity.Text = result.list[0].main?.humidity + " %";
-        lblWind.Text = (result.list[0].wind.speed * 3.6).ToString("0") + " km/h";
-        ImgWeatherIcon.Source = result.list[0].weather?[0]?.customIcon;
-        lblFeelsLike.Text = result.list[0].main?.FeelsLike.ToString() + "°";
-
-        await Task.Yield();
     }
+
+    private async void OnRefreshing(object sender, EventArgs e) => await RefreshWeatherData();
 
     private async void OnSearchClicked(object sender, EventArgs e)
     {
-        // A MAUI beépített promptja: Cím, Üzenet, OK gomb szövege, Mégse gomb szövege
-        string cityName = await DisplayPromptAsync("City Search", "Serch by city name", "Search", "Cancel", "e.g. London");
+        string cityName = await DisplayPromptAsync("Search for city", "Type the name of the city:", "Search", "Cancel");
 
         if (!string.IsNullOrWhiteSpace(cityName))
         {
-            try
+            var result = await ApiService.GetWeatherByCityName(cityName);
+            if (result != null)
             {
-                // Meghívjuk az ApiService-t (azt, amit korábban mutattál)
-                var result = await ApiService.GetWeatherByCityName(cityName);
-
-                if (result != null)
-                {
-                    // Frissítjük a kijelzõt az új adatokkal
-                    await UpdateWeatherUI(result);
-                }
-                else
-                {
-                    await DisplayAlertAsync("Error", "City not found. Please check the spelling!", "OK");
-                }
-            }
-            catch (Exception)
-            {
-                await DisplayAlertAsync("Error", "Failed to load weather data.", "OK");
+                UpdateWeatherUI(result);
             }
         }
     }
 
     private async void OnSevenDaysTapped(object sender, EventArgs e)
     {
-        if (_listOfForecastDays.Count > 0)
+        if (WeatherData != null && _listOfForecastDays != null && _listOfForecastDays.Count > 0)
         {
-            await Navigation.PushAsync(new ForecastPage(lblCity.Text) { BindingContext = this });
+            var forecastPage = new ForecastPage(WeatherData.city?.name);
+
+            forecastPage.BindingContext = this;
+            await Navigation.PushAsync(forecastPage);
         }
     }
+
+    // PropertyChanged implementáció
+    public event PropertyChangedEventHandler PropertyChanged;
+    public void OnPropertyChanged([CallerMemberName] string name = "") =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 }

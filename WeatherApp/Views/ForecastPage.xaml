@@ -47,13 +47,9 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding _listOfForecastDays}" SelectionMode="None" Margin="20,20">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                 
                     <Border BackgroundColor="#20FFFFFF" Margin="0,0,0,15" Padding="25,25,25,10" StrokeThickness="0" StrokeShape="RoundRectangle 20">
-
-                        <!-- 3 sor: Felső a tartalomnak, egy üres köztes hely, és egy alsó a dátumnak -->
                         <Grid ColumnDefinitions="*, Auto, Auto" RowDefinitions="Auto, *, Auto">
 
-                            <!-- BAL OLDAL: Nap neve és Description -->
                             <VerticalStackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center">
                                 <Label Text="{Binding DayName}" 
                                TextColor="White" 
@@ -66,7 +62,6 @@
                                Margin="0,2,0,0" />
                             </VerticalStackLayout>
 
-                            <!-- KÖZÉP: Ikon (Az első két soron átível) -->
                             <Image Grid.Column="1" 
                            Grid.Row="0"
                            Grid.RowSpan="2"
@@ -76,7 +71,6 @@
                            Margin="0,0,25,0" 
                            VerticalOptions="Center"/>
 
-                            <!-- JOBB FELSŐ: Hőmérséklet -->
                             <HorizontalStackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End">
                                 <Label Text="{Binding Items[0].main.temperature, StringFormat='{0:F0}°'}" 
                                TextColor="White" 
@@ -90,7 +84,6 @@
                                Margin="5,0,0,0"/>
                             </HorizontalStackLayout>
 
-                            <!-- JOBB ALSÓ: Dátum (A harmadik sorba került) -->
                             <Label Grid.Column="0" 
                            Grid.ColumnSpan="3"
                            Grid.Row="2" 

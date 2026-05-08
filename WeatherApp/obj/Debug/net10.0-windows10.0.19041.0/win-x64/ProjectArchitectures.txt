@@ -1,0 +1,1 @@
+H:\GitHub repositories\WeatherApp-MAUI\WeatherApp\WeatherApp.csproj;x64
